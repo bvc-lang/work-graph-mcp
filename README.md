@@ -2,9 +2,11 @@
 
 [MCP](https://modelcontextprotocol.io) server for Work Graph — list, create, and update work items in `intent/**/*.work.bvc`.
 
-## Cursor
+Works with any MCP-capable agent client (Cursor, Claude Desktop, Claude Code, and others).
 
-After `npx @work-graph/cli init .`, `.cursor/mcp.json` includes:
+## After `work-graph init`
+
+`npx @work-graph/cli init .` writes `.cursor/mcp.json` when you use Cursor. The entry looks like:
 
 ```json
 {
@@ -21,7 +23,7 @@ After `npx @work-graph/cli init .`, `.cursor/mcp.json` includes:
 }
 ```
 
-Reload MCP in Cursor after init.
+Reload MCP in your IDE after init. For Claude Desktop / Claude Code and other clients, use the same command and env — see [workgraph-mcp-clients.md](https://github.com/bvc-lang/work-graph/blob/main/docs/workgraph-mcp-clients.md) in the monorepo.
 
 ## Standalone
 
@@ -30,3 +32,17 @@ WORKGRAPH_ROOT=/path/to/project npx @work-graph/mcp
 ```
 
 Requires a project with `.work-graph/config.json` (run `npx @work-graph/cli init` first).
+
+## Contract tools (AN-50.1)
+
+| Tool | Description |
+|------|-------------|
+| `get_work_contract` | Returns `work-item-contract.v1` projection (input/output/verification) |
+| `assert_task_ready_for_done` | Dry-run readiness check → `violations[]` |
+| `validate_evidence` | Validate structured evidence JSON vs contract |
+| `add_work_item_evidence` | Append prose and/or `structuredEvidence` (Tier A gates enforce structured command) |
+| `complete_work_item` | Enforces same readiness rules; returns `violations[]` on failure |
+
+Resource: `workgraph://contract/{workId}`
+
+Recommended agent flow: `get_work_contract` → run checks → `validate_evidence` → `assert_task_ready_for_done` → `complete_work_item`.

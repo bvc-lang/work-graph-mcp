@@ -1,6 +1,6 @@
 # work-graph/mcp
 
-npm: [`@work-graph/mcp`](https://www.npmjs.com/package/@work-graph/mcp) v0.2.4
+npm: [`@work-graph/mcp`](https://www.npmjs.com/package/@work-graph/mcp) v0.2.5
 
 Monorepo: [bvc-lang/work-graph](https://github.com/bvc-lang/work-graph)
 
