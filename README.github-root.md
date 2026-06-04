@@ -1,6 +1,6 @@
 # work-graph/mcp
 
-npm: [`@work-graph/mcp`](https://www.npmjs.com/package/@work-graph/mcp) v0.2.8
+npm: [`@work-graph/mcp`](https://www.npmjs.com/package/@work-graph/mcp) v0.2.9
 
 Website: [workgraph.ru/en](https://workgraph.ru/en/)
 
