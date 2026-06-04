@@ -2,6 +2,8 @@
 
 [MCP](https://modelcontextprotocol.io) server for Work Graph — list, create, and update work items in `intent/**/*.work.bvc`.
 
+Website: [workgraph.ru/en](https://workgraph.ru/en/)
+
 Works with any MCP-capable agent client (Cursor, Claude Desktop, Claude Code, and others).
 
 ## After `work-graph init`
@@ -46,3 +48,9 @@ Requires a project with `.work-graph/config.json` (run `npx @work-graph/cli init
 Resource: `workgraph://contract/{workId}`
 
 Recommended agent flow: `get_work_contract` → run checks → `validate_evidence` → `assert_task_ready_for_done` → `complete_work_item`.
+
+## Links
+
+- Website: https://workgraph.ru/en/
+- npm: https://www.npmjs.com/package/@work-graph/mcp
+- Monorepo: https://github.com/bvc-lang/work-graph
